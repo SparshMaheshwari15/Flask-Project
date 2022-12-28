@@ -1,0 +1,4 @@
+area text box
+drop down menu
+submit button
+show error on wrong input
