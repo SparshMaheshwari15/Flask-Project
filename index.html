@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>
+        <h2><b> Hello users!</b></h2>
+        My name is Sparsh Maheshwari <br>
+        I have created a Flask project in which using Python ML  
+        I have firstly created a model and deployed it on Heroku <br>
+    </p>
+    <form action="{{url_for('predict')}}" method="post">
+        <label for=""> Enter the total area of the flat <br><input type="number" name="area" placeholder="" id="area"></input></label><br>
+        <label for=""> Enter the number of bedroom availabe <br><input type="number" list="numbers" name="bedroom" id="bedroom"></label><br>
+        <label for="">Enter the number of bathroom availabe<br><input type="number" list="numbers" name="bathroom" id="bathroom"></label> <br>
+        <label for="">Enter the number of stories availabe<br> <input type="number" list="numbers" name="stories" id="stories"></label><br>
+        <label for="">main road is availabe <br><input type="text" list="YesNo" name="mainroad" id="mainroad"></label><br>
+        <label for="">guestroom is availabe<br> <input type="text" list="YesNo" name="guestroom" id="guestroom"></label><br>
+        <label for="">basement is availabe<br> <input type="text" list="YesNo" name="basement" id="basement"></label><br>
+        <label for="">hotwaterheating is availabe <br><input type="text" list="YesNo" name="hotwaterheating" id="hotwaterheating"></label><br>
+        <label for="">airconditioning is availabe <br><input type="text" list="YesNo" name="airconditioning" id="airconditioning"></label><br>
+        <label for="">Enter the number of parking availabe <br><input type="number" list="numbers" name="parking" id="parking"></label><br>
+        <label for="">prefarea is availabe <br><input type="text" list="YesNo" name="prefarea" id="prefarea"></label><br>
+        <label for="">furnishingstatus<br> <input type="text" list="Furniture" name="furnishingstatus" id="furnishingstatus"></label><br>
+        <datalist id="numbers">
+            <option value="0">
+            <option value="1">
+            <option value="2">
+            <option value="3">
+            <option value="4">
+            <option value="5">        
+        </datalist>
+        <datalist id="YesNo">
+            <option value="yes"></option>
+            <option value="no"></option>
+        </datalist>
+        <datalist id="Furniture">
+            <option value="furnished"></option>
+            <option value="semi-furnished"></option>
+            <option value="unfurnished"></option>
+        </datalist> <br>
+        <button type="submit">Submit</button>
+    </form>
+    <h1>{{prediction_text}}</h1>
+    <p> 
+        You have entered the below data <br>
+        {{request.form.get('area')
+        ,request.form.get('bedroom')
+        ,request.form.get('bathroom')
+        ,request.form.get('stories')
+        ,request.form.get('mainroad')
+        ,request.form.get('guestroom')
+        ,request.form.get('basement')
+        ,request.form.get('hotwaterheating')
+        ,request.form.get('airconditioning')
+        ,request.form.get('parking')
+        ,request.form.get('prefarea')
+        ,request.form.get('furnishingstatus')}}
+    </p>
+    <p>
+        To download the dataset <a href="https://drive.google.com/file/d/1mGd1jwG1jExXmJpmGgDhUY9awevlopdD/view">Click Here</a>
+    <h3> You can check my <a href="https://www.linkedin.com/in/sparsh-maheshwari-1004a9148/"> Linkedin id</a>
+    </h3></p>
+</body>
+</html>
