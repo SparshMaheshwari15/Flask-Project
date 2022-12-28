@@ -51,7 +51,7 @@ def predict():
         except:
             return render_template('index.html',prediction_text=f'Something went wrong(Wrong Input)!')
     except:
-        return render_template('templates/index.html',prediction_text=f'Something went wrong(No Input detected)!')
+        return render_template('index.html',prediction_text=f'Something went wrong(No Input detected)!')
 if __name__ == "__main__":
     app.run(debug=True)
 ##
