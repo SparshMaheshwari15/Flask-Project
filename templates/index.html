@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,33 +8,108 @@
     <title>Flask Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <p>
-        <h2><b> Hello users!</b></h2>
-        My name is Sparsh Maheshwari <br>
-        I have created a Flask project in which using Python ML  
-        I have firstly created a model and deployed it on Heroku <br>
+    <h2><b> Hello users!</b></h2>
+    My name is Sparsh Maheshwari <br>
+    I have created a Flask project in which using Python ML
+    I have firstly created a model and deployed it on Heroku <br>
     </p>
     <form action="{{url_for('predict')}}" method="post">
-        <label for=""> Enter the total area of the flat <br><input type="number" name="area" placeholder="" id="area"></input></label><br>
-        <label for=""> Enter the number of bedroom availabe <br><input type="number" list="numbers" name="bedroom" id="bedroom"></label><br>
-        <label for="">Enter the number of bathroom availabe<br><input type="number" list="numbers" name="bathroom" id="bathroom"></label> <br>
-        <label for="">Enter the number of stories availabe<br> <input type="number" list="numbers" name="stories" id="stories"></label><br>
-        <label for="">main road is availabe <br><input type="text" list="YesNo" name="mainroad" id="mainroad"></label><br>
-        <label for="">guestroom is availabe<br> <input type="text" list="YesNo" name="guestroom" id="guestroom"></label><br>
-        <label for="">basement is availabe<br> <input type="text" list="YesNo" name="basement" id="basement"></label><br>
-        <label for="">hotwaterheating is availabe <br><input type="text" list="YesNo" name="hotwaterheating" id="hotwaterheating"></label><br>
-        <label for="">airconditioning is availabe <br><input type="text" list="YesNo" name="airconditioning" id="airconditioning"></label><br>
-        <label for="">Enter the number of parking availabe <br><input type="number" list="numbers" name="parking" id="parking"></label><br>
-        <label for="">prefarea is availabe <br><input type="text" list="YesNo" name="prefarea" id="prefarea"></label><br>
-        <label for="">furnishingstatus<br> <input type="text" list="Furniture" name="furnishingstatus" id="furnishingstatus"></label><br>
-        <datalist id="numbers">
+        <label for=""> Enter the total area of the flat <br><input type="number" name="area" placeholder=""
+                id="area"></input></label><br>
+        <label for=""> Enter the number of bedroom available <br>
+            <select name="bedroom" id="bedroom">
+                <option value="Select">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select> <br>
+            <label for="">Enter the number of bathroom available<br>
+                <select name="bathroom" id="bathroom">
+                    <option value="Select">Select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> <br>
+                <label for="">Enter the number of stories available<br>
+                    <select name="stories" id="stories">
+                        <option value="Select">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select> <br>
+                    <label for="">main road is available <br>
+                        <select name="mainroad" id="mainroad">
+                            <option value="Select">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </label><br>
+                    <label for="">guestroom is available<br>
+                        <select name="guestroom" id="guestroom">
+                            <option value="Select">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select> <br>
+                        <label for="">basement is available<br>
+                            <select name="basement" id="basement">
+                                <option value="Select">Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select> <br>
+                            <label for="">hotwaterheating is available <br>
+                                <select name="hotwaterheating" id="hotwaterheating">
+                                    <option value="Select">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select> <br>
+                                <label for="">airconditioning is available <br>
+                                    <select name="airconditioning" id="airconditioning">
+                                        <option value="Select">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select> <br>
+                                    <label for="">Enter the number of parking available <br>
+                                        <select name="parking" id="parking">
+                                            <option value="Select">Select</option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select> <br>
+                                        <label for="">prefarea is available <br>
+                                            <select name="prefarea" id="prefarea">
+                                                <option value="Select">Select</option>
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select> <br>
+                                            <label for="">furnishingstatus<br>
+                                                <select name="furnishingstatus" id="furnishingstatus">
+                                                    <option value="Select">Select</option>
+                                                    <option value="furnished">furnished</option>
+                                                    <option value="semi-furnished">semi-furnished</option>
+                                                    <option value="unfurnished">unfurnished</option>
+                                                </select> <br> <br>
+                                                <!-- <datalist id="numbers">
             <option value="0">
             <option value="1">
             <option value="2">
             <option value="3">
             <option value="4">
-            <option value="5">        
+            <option value="5">
         </datalist>
         <datalist id="YesNo">
             <option value="yes"></option>
@@ -43,11 +119,11 @@
             <option value="furnished"></option>
             <option value="semi-furnished"></option>
             <option value="unfurnished"></option>
-        </datalist> <br>
-        <button type="submit">Submit</button>
+        </datalist> <br> -->
+                                                <button type="submit">Submit</button>
     </form>
     <h1>{{prediction_text}}</h1>
-    <p> 
+    <p>
         You have entered the below data <br>
         {{request.form.get('area')
         ,request.form.get('bedroom')
@@ -63,8 +139,11 @@
         ,request.form.get('furnishingstatus')}}
     </p>
     <p>
-        To download the dataset <a href="https://drive.google.com/file/d/1mGd1jwG1jExXmJpmGgDhUY9awevlopdD/view">Click Here</a>
-    <h3> You can check my <a href="https://www.linkedin.com/in/sparsh-maheshwari-1004a9148/"> Linkedin id</a>
-    </h3></p>
+        To view the dataset <a href="https://drive.google.com/file/d/1mGd1jwG1jExXmJpmGgDhUY9awevlopdD/view"
+            target="_blank">Click Here</a>
+    <h3> You can check my <a href="https://www.linkedin.com/in/sparsh-maheshwari-1004a9148/" target="_blank"> Linkedin
+            id</a> </h3>
+    </p>
 </body>
+
 </html>
